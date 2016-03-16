@@ -1,0 +1,62 @@
+html. body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+body {
+  background: lightblue;
+}
+* {
+  box-sizing: border-box;
+}
+
+main {
+  text-align: center;
+  height: 100%;
+}
+
+#buttons > article {
+  width: 50%;
+  height: 100px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+#buttons:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#buttons > article {
+  font-size: 30px;
+}
+
+.plus, .minus {
+  font-weight: bold;
+}
+
+.plus {
+  font-size: 34px;
+}
+
+.minus {
+  font-size: 42px;
+}
+
+h4 {
+  margin: 0;
+}
+
+#timer {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
