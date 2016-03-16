@@ -5,6 +5,8 @@ var clock = {
   $session_add: $(".session_length .add"),
   timer_on: true,
   time: 800000,
+  session_length: 10000,
+  break_length: 10000,
 
   secondsToMinutes: function(sec) {
     var mins = 0,
@@ -32,11 +34,43 @@ var clock = {
   }
 }
 
+setInterval(clock.timer.bind(clock), 1000)
+
 $("#timer").on("click", function() {
   console.log("turn off/on")
   clock.timer_on = !clock.timer_on;
 });
 
+$(".break_length .minus").on("click", function() {
+  if (clock.timer_on && clock.break_length >= 1000){
+      clock.break_length -= 1000;
+    $(".break_length .time").html(clock.secondsToMinutes(clock.break_length / 1000 ));
+  }
+});
+
+$(".break_length .plus").on("click", function() {
+  if (clock.timer_on){
+      clock.break_length += 1000;
+    $(".break_length .time").html(clock.secondsToMinutes(clock.break_length / 1000 ));
+  }
+});
 
 
-setInterval(clock.timer.bind(clock), 1000)
+$(".session_length .minus").on("click", function() {
+  if (clock.timer_on && clock.session_length >= 1000){
+      clock.session_length -= 1000;
+    $(".session_length .time").html(clock.secondsToMinutes(clock.session_length / 1000 ));
+  }
+});
+
+$(".session_length .plus").on("click", function() {
+  if (clock.timer_on){
+      clock.session_length += 1000;
+    $(".session_length .time").html(clock.secondsToMinutes(clock.session_length / 1000 ));
+  }
+});
+
+
+
+
+

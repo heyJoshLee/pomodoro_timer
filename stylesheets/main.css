@@ -75,7 +75,7 @@ main {
 }
 
 #timer:hover {
-  cursor:pointer;
+  cursor:none;
 }
 
 #timer:after {
