@@ -74,6 +74,10 @@ main {
   border: 1px solid rgba(200, 200, 255, 1);
 }
 
+#timer:hover {
+  cursor:pointer;
+}
+
 #timer:after {
   position: absolute;
   top: -10%;
